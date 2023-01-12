@@ -1,0 +1,10 @@
+.vagrant
+*.log
+*.report
+
+ica-tools.tgz
+*.patch
+*.tgz
+
+shared
+hugepages2M
