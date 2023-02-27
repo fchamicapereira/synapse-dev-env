@@ -98,4 +98,10 @@ COPY --chown=docker:docker ./resources/ica-tools.tgz /opt/files/ica-tools.tgz
 RUN /opt/scripts/build-p4.sh
 RUN /opt/scripts/build-barefoot-sde.sh
 
+# Fix protobuf version
+RUN sudo pip3 install --force-reinstall -v "protobuf==3.20.0"
+
+# After build setup
+RUN echo "set -g default-terminal \"screen-256color\"" >> /home/docker/.tmux.conf
+
 CMD [ "/usr/bin/zsh" ]
