@@ -103,5 +103,5 @@ RUN sudo pip3 install --force-reinstall -v "protobuf==3.20.0"
 
 # After build setup
 RUN echo "set -g default-terminal \"screen-256color\"" >> /home/docker/.tmux.conf
-
-CMD [ "/usr/bin/zsh" ]
+RUN echo "set-option -g default-shell /bin/zsh" >> /home/docker/.tmux.conf
+RUN echo "export PATH=/home/docker/workspace/tna_programs/build_tools:$PATH" >> /home/docker/.zshrc
